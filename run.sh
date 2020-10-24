@@ -20,7 +20,9 @@ else
 fi
 echo "-- CPU core: $cpu_core"
 
-make -d -j${cpu_core} -C build
+make -j${cpu_core} -C build
+
+otool -L build/${program}
 
 echo "-- Launching main"
 ./build/${program}

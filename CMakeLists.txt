@@ -12,20 +12,20 @@ configure_file (
 include_directories(
     /usr/local/include
     ${PROJECT_BINARY_DIR}
+    ${PROJECT_SOURCE_DIR}/libs/SDL2_image/include
 )
 link_directories(
     /usr/local/lib
     ${PROJECT_BINARY_DIR}
 )
 
-# add_library(ur_lib
-#     SHARED
-#     IMPORTED
-# )
-# set_target_properties(ur_lib 
-#     PROPERTIES 
-#     IMPORTED_LOCATION 
-#     ${PROJECT_SOURCE_DIR}/path/to/ur_lib)
+add_library(SDL2_image
+    SHARED
+    IMPORTED
+)
+set_target_properties(SDL2_image 
+    PROPERTIES 
+    IMPORTED_LOCATION ${PROJECT_SOURCE_DIR}/libs/SDL2_image/lib/libSDL2_image-2.0.0.dylib)
 
 add_subdirectory(src)
 
@@ -34,7 +34,16 @@ target_include_directories(
     ${PROJECT_NAME} PUBLIC
     ${PROJECT_BINARY_DIR}
 )
-target_link_libraries(${PROJECT_NAME} src SDL2)
+target_link_libraries(${PROJECT_NAME} src SDL2 SDL2_image)
+
+if(APPLE)
+    message("Adding add_custom_command")
+    add_custom_command(TARGET ${PROJECT_NAME}
+    COMMAND echo "Changing irrklang reference path"
+    COMMAND install_name_tool -add_rpath ${PROJECT_SOURCE_DIR}/libs/SDL2_image/lib
+    -change /usr/local/lib/libSDL2_image-2.0.0.dylib @rpath/libSDL2_image-2.0.0.dylib ${PROJECT_NAME}
+    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/build)
+endif(APPLE)
 
 # Test case 
 include(CTest)

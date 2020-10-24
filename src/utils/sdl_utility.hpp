@@ -14,6 +14,7 @@ extern "C"
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
+const int TILE_SIZE = 40;
 
 /*
  * Recurse through the list of arguments to clean up, cleaning up
@@ -78,5 +79,7 @@ void LogSDLError(const std::string &msg);
 SDL_Texture *LoadSDLTexture(const std::string &file, SDL_Renderer *ren);
 
 void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y);
+
+void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y, int w, int h);
 
 #endif // SDL_UTILITY_H
