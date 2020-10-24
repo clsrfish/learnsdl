@@ -17,6 +17,7 @@
 #include "./res_path.hpp"
 #include "./utils/sdl_utility.hpp"
 
+// https://www.willusher.io/sdl2%20tutorials/2013/08/20/lesson-4-handling-events
 namespace handling_events
 {
     int main()

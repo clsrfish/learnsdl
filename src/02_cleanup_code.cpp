@@ -16,8 +16,8 @@
 #include "./res_path.hpp"
 #include "./utils/sdl_utility.hpp"
 
-// https://www.willusher.io/sdl2%20tutorials/2013/08/17/lesson-1-hello-world
-namespace dont_in_main
+// https://www.willusher.io/sdl2%20tutorials/2013/08/17/lesson-2-dont-put-everything-in-main
+namespace cleanup_code
 {
     int main()
     {
@@ -96,4 +96,4 @@ namespace dont_in_main
 
         return 0;
     }
-} // namespace dont_in_main
+} // namespace cleanup_code

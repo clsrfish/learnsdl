@@ -17,6 +17,7 @@
 #include "./res_path.hpp"
 #include "./utils/sdl_utility.hpp"
 
+// https://www.willusher.io/sdl2%20tutorials/2013/08/27/lesson-5-clipping-sprite-sheets
 namespace sprite_sheet
 {
     int main()

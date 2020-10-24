@@ -17,8 +17,8 @@
 #include "./res_path.hpp"
 #include "./utils/sdl_utility.hpp"
 
-// https://www.willusher.io/sdl2%20tutorials/2013/08/17/lesson-1-hello-world
-namespace sdl_ext_libs
+// https://www.willusher.io/sdl2%20tutorials/2013/08/18/lesson-3-sdl-extension-libraries
+namespace load_image
 {
     int main()
     {
@@ -110,4 +110,4 @@ namespace sdl_ext_libs
 
         return 0;
     }
-} // namespace sdl_ext_libs
+} // namespace load_image

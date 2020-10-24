@@ -18,6 +18,7 @@
 #include "./res_path.hpp"
 #include "./utils/sdl_utility.hpp"
 
+// https://www.willusher.io/sdl2%20tutorials/2013/12/18/lesson-6-true-type-fonts-with-sdl_ttf
 namespace render_text
 {
     int main()

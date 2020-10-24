@@ -16,7 +16,7 @@
 #include "./res_path.hpp"
 
 // https://www.willusher.io/sdl2%20tutorials/2013/08/17/lesson-1-hello-world
-namespace helloworld
+namespace hello_world
 {
     int main()
     {
@@ -98,4 +98,4 @@ namespace helloworld
 
         return 0;
     }
-} // namespace helloworld
+} // namespace hello_world
