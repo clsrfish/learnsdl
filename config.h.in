@@ -1,0 +1,11 @@
+#if !defined(CONFIG_H)
+#define CONFIG_H
+
+#define PROJECT_NAME "@CMAKE_PROJECT_NAME@"
+#define PROJECT_VERSION "@leanrsdl_VERSION@"
+#define PROJECT_VERSION_MAJOR @leanrsdl_VERSION_MAJOR@
+#define PROJECT_VERSION_MINOR @leanrsdl_VERSION_MINOR@
+#define PROJECT_VERSION_PATCH @leanrsdl_VERSION_PATCH@
+
+
+#endif // CONFIG_H
