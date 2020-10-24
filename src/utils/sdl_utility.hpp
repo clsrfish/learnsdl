@@ -80,8 +80,10 @@ void LogSDLError(const std::string &msg);
 
 SDL_Texture *LoadSDLTexture(const std::string &file, SDL_Renderer *ren);
 
-void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y);
+void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y, SDL_Rect *clip = nullptr);
 
 void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y, int w, int h);
+
+void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst, SDL_Rect *clip = nullptr);
 
 #endif // SDL_UTILITY_H
