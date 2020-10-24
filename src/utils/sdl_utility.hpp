@@ -16,6 +16,8 @@ const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 const int TILE_SIZE = 40;
 
+const int SDL_DRAW_DELAY = 16;
+
 /*
  * Recurse through the list of arguments to clean up, cleaning up
  * the first one in the list each iteration.
