@@ -1,4 +1,5 @@
 #include <SDL2_image/SDL_image.h>
+#include <SDL2_ttf/SDL_ttf.h>
 #include "./sdl_utility.hpp"
 #include "./log.hpp"
 
@@ -47,4 +48,30 @@ void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y, int w, 
 void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst, SDL_Rect *clip)
 {
     SDL_RenderCopy(ren, tex, clip, &dst);
+}
+
+SDL_Texture *RenderText(const std::string &text, const std::string &fontFile, SDL_Color color, int fontSize, SDL_Renderer *ren)
+{
+    TTF_Font *font = TTF_OpenFont(fontFile.c_str(), fontSize);
+    if (font == nullptr)
+    {
+        LogSDLError("TTF_OpenFont failed: %s");
+        return nullptr;
+    }
+    SDL_Surface *surface = TTF_RenderText_Blended(font, text.c_str(), color);
+    if (surface == nullptr)
+    {
+        TTF_CloseFont(font);
+        LogSDLError("TTF_RenderText failed: %s");
+        return nullptr;
+    }
+    SDL_Texture *tex = SDL_CreateTextureFromSurface(ren, surface);
+    if (tex == nullptr)
+    {
+        LogSDLError("SDL_CreateText failed: %s");
+    }
+
+    SDL_FreeSurface(surface);
+    TTF_CloseFont(font);
+    return tex;
 }

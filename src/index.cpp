@@ -5,6 +5,7 @@
 #include "./sdl_ext_libs.cpp"
 #include "./04_handling_events.cpp"
 #include "./05_sprite_sheet.cpp"
+#include "./06_render_text.cpp"
 
 void hello()
 {
@@ -12,5 +13,6 @@ void hello()
     // dont_in_main::main();
     // sdl_ext_libs::main();
     // handling_events::main();
-    sprite_sheet::main();
+    // sprite_sheet::main();
+    render_text::main();
 }

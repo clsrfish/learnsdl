@@ -1,6 +1,7 @@
 #!/bin/bash
 
 program=learnsdl
+
 if [ ! -d build ]; then
     echo "-- Build directory not exists"
 fi
@@ -20,7 +21,7 @@ else
 fi
 echo "-- CPU core: $cpu_core"
 
-make -j${cpu_core} -C build
+make -j${cpu_core} VERBOSE=1 -C build
 
 otool -L build/${program}
 

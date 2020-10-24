@@ -86,4 +86,5 @@ void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y, int w, 
 
 void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, SDL_Rect dst, SDL_Rect *clip = nullptr);
 
+SDL_Texture *RenderText(const std::string &text, const std::string &fontFile, SDL_Color color, int fontSize, SDL_Renderer *ren);
 #endif // SDL_UTILITY_H
