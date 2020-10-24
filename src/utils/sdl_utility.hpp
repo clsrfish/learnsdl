@@ -2,6 +2,8 @@
 #define SDL_UTILITY_H
 
 #ifdef __cplusplus
+#include <string>
+
 extern "C"
 {
 #endif
@@ -9,6 +11,9 @@ extern "C"
 #ifdef __cplusplus
 }
 #endif
+
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
 
 /*
  * Recurse through the list of arguments to clean up, cleaning up
@@ -67,5 +72,11 @@ inline void cleanup<SDL_Surface>(SDL_Surface *surf)
     }
     SDL_FreeSurface(surf);
 }
+
+void LogSDLError(const std::string &msg);
+
+SDL_Texture *LoadSDLTexture(const std::string &file, SDL_Renderer *ren);
+
+void RenderSDLTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y);
 
 #endif // SDL_UTILITY_H
